@@ -20,6 +20,16 @@ const connect = function () {
   conn.on("connect", () => {
     conn.write("Name: MT");
   });
+
+  // Send "Move: up" after a delay of 2 seconds
+    // setTimeout(() => {
+    //   conn.write("Move: up");
+    // }, 2000);
+
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 2000);
+
   return conn;
 };
 
