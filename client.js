@@ -19,7 +19,7 @@ const connect = function() {
   });
   // send string to the server
   conn.on("connect", () => {
-    conn.write("Name: MT");
+    conn.write("Name: SNK");
   });
   return conn;
 };
