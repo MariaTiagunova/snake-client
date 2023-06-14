@@ -1,4 +1,4 @@
-const { MOVE_UP_KEY, MOVE_LEFT_KEY, MOVE_DOWN_KEY, MOVE_RIGHT_KEY } = require("./constants");
+const { MOVE_UP_KEY, MOVE_LEFT_KEY, MOVE_DOWN_KEY, MOVE_RIGHT_KEY, MESSAGE_MAPPINGS } = require("./constants");
 
 // setup interface to handle user input from stdin
 let connection;
@@ -30,17 +30,11 @@ const handleUserInput = function(key) {
   if (key === MOVE_RIGHT_KEY) {
     connection.write("Move: right");
   }
-  if (key === 'g') {
-    connection.write("Say: Hello there!");
-  }
-  if (key === 'f') {
-    connection.write("Say: Haha!");
-  }
-  if (key === 't') {
-    connection.write("Say: GG");
-  }
-  if (key === 'h') {
-    connection.write("Say: hisssssss");
+  // checks if the pressed key exists as a property in the MESSAGE_MAPPINGS object
+  if (MESSAGE_MAPPINGS.hasOwnProperty(key)) {
+    // retrieves the corresponding message and sends it to the server
+    const message = MESSAGE_MAPPINGS[key]; 
+    connection.write(`Say: ${message}`);
   }
 };
 
