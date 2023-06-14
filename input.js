@@ -31,9 +31,9 @@ const handleUserInput = function(key) {
     connection.write("Move: right");
   }
   // checks if the pressed key exists as a property in the MESSAGE_MAPPINGS object
-  if (MESSAGE_MAPPINGS.hasOwnProperty(key)) {
+  if (Object.prototype.hasOwnProperty.call(MESSAGE_MAPPINGS, key)) {
     // retrieves the corresponding message and sends it to the server
-    const message = MESSAGE_MAPPINGS[key]; 
+    const message = MESSAGE_MAPPINGS[key];
     connection.write(`Say: ${message}`);
   }
 };
