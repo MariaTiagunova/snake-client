@@ -14,7 +14,7 @@ Before you can run this client, you will need to be running the server side whic
 ## Controls
 - Use WASD keys to move up, right, down and left respectively
 - Express your feelings about the game process using pre-written messages binded to the keys:
-  g: "Hello there!"
-  f: "Haha!"
-  t: "GG"
-  h: "hisssssss"
+  * g: "Hello there!"
+  * f: "Haha!"
+  * t: "GG"
+  * h: "hisssssss"
